@@ -3,12 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
+    <script type=”text/javascript” src=”http://www.google.com/jsapi?key=INSERIR_SUA_CHAVE”></script>
+    <script type="text/javascript" src="https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes"></script>
+    <script type="javascript">
+        #btn{ $.get("listar_regioes.php", function(resultado){ $("#mensagem").html(resultado); }) }
+
+
+
+    </script>
 </head>
 
 <body>
     <h1>Exemplo Chamada Ajax</h1>
     <label>UF:</label> <input type="text" id="uf" /></br>
-    <button id="btn">Obter Microrregiões</button>
+    <button id="btn" onclick="$get">Obter Microrregiões</button>
     <div class="texto" id="microrregiões">
         Microrregiões
     </div>
