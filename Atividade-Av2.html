@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,21 +6,40 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi?key=INSERIR_SUA_CHAVE"></script>
 
-    <script type="javascript">
-        $('#botao').click(function1() { var valor1 = document.getElementById("teste").value; var link = "https://servicodados.ibge.gov.br/api/v1/pesquisas/" + valor1; $.ajax({ url: link, type: 'GET', dataType: 'json', }) .done(function() { console.log("success");
-        console.log(valor1); document.getElementById("demo").innerHTML = valor1; }), .fail(function() { console.log("error"); }), .always(function() { console.log("complete"); }); });
-    </script>
+
 </head>
 
 <body>
     <h1>Exemplo Chamada Ajax</h1>
     <label>UF:</label> <input type="text" id="teste"></input>
     </br>
-    <button id="botao" onclick="function">Obter Microrregiões</button>
+    <button id="botao" onclick="">Obter Microrregiões</button>
     <div class="texto" id="microrregioes">
 
     </div>
+    <script type="javascript">
+          $('#botao').click(function() {
+          var valor1 = document.getElementById("teste").value;
+          var link = "https://servicodados.ibge.gov.br/api/v1/pesquisas/" + valor1;
+          $.ajax({
+              url: link,
+              type: 'GET',
+              dataType: 'json',
 
+            })
+           .done(function() {
+              console.log("success");
+              console.log(valor1);
+              document.getElementById("demo").innerHTML = valor1;
+            })
+            .fail(function() {
+              console.log("error");
+            })
+            .always(function() {
+              console.log("complete");
+            });
+        });
+    </script>
 </body>
 
 </html>
