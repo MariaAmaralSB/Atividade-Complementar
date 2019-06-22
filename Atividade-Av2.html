@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
-    <script type=”text/javascript” src=”http://www.google.com/jsapi?key=INSERIR_SUA_CHAVE”></script>
-    <script type="text/javascript" src="https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes"></script>
+    <script type=”text/javascript” src="http://www.google.com/jsapi?key=INSERIR_SUA_CHAVE"></script>
+
     <script type="javascript">
-        #btn{ $.get("listar_regioes.php", function(resultado){ $("#mensagem").html(resultado); }) }
-
-
-
+        $('#botao').click(function1() { var valor1 = document.getElementById("teste").value; var link = "https://servicodados.ibge.gov.br/api/v1/pesquisas/" + valor1; $.ajax({ url: link, type: 'GET', dataType: 'json', }) .done(function() { console.log("success");
+        console.log(valor1); document.getElementById("demo").innerHTML = valor1; }), .fail(function() { console.log("error"); }), .always(function() { console.log("complete"); }); });
     </script>
 </head>
 
 <body>
     <h1>Exemplo Chamada Ajax</h1>
-    <label>UF:</label> <input type="text" id="uf" /></br>
-    <button id="btn" onclick="$get">Obter Microrregiões</button>
-    <div class="texto" id="microrregiões">
-        Microrregiões
+    <label>UF:</label> <input type="text" id="teste"></input>
+    </br>
+    <button id="botao" onclick="function">Obter Microrregiões</button>
+    <div class="texto" id="microrregioes">
+
     </div>
+
 </body>
 
 </html>
