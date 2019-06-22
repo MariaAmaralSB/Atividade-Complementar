@@ -18,7 +18,7 @@
 
     </div>
     <script type="javascript">
-          $('#botao').click(function() {
+          $('#botao').click({
           var valor1 = document.getElementById("teste").value;
           var link = "https://servicodados.ibge.gov.br/api/v1/pesquisas/" + valor1;
           $.ajax({
